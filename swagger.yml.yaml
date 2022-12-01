@@ -1,0 +1,36 @@
+openapi: 3.0.1
+info:
+  title: Crack Station
+  description: This API Decrypts a 3 character encrypted String(SHA1 or SHA2) and returns a plain text password
+  version: 1.0.0
+servers:
+  - url: https://8jhppxy3wg.execute-api.us-east-1.amazonaws.com/password/
+tags:
+  - name: password
+    description: This is a hashed password (encrpted password) that is sent along with the request as a path parameter which needs to be decrypted
+paths:
+  /{password}:
+    get:
+      tags:
+        - password
+      description: Returns the cracked password
+      parameters:
+        - name: password
+          in: path
+          description: password to crack
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Your password is
+          content:
+            application/json:
+              schema:
+                type: object
+               
+              examples:
+                '0':
+                  value: '{"df211ccdd94a63e0bcb9e6ae427a249484a49d60": "as"}'
+    servers:
+      - url: https://8jhppxy3wg.execute-api.us-east-1.amazonaws.com/password/
