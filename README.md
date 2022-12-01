@@ -1,4 +1,4 @@
-# # **Crackstation Through AWS** 
+## **Crackstation Through AWS** 
 This library accepts encrypted strings with the SHA-1 or SHA-256 algorithm as input and outputs a decrypted string. The application is hosted as a service with the help of AWS.
 
 ## **Overview**<hr></hr>
